@@ -1,11 +1,42 @@
 {
-  "name": "babylon-starter",
+  "name": "nodejs-express-app-bp",
   "version": "1.0.0",
-  "description": "Starter project exploring 3D web rendering in Babylon.js",
-  "main": "index.js",
+  "description": "A minimal webpack build for Node.js Express Web App",
+  "app": "src/index.js",
+  "main": "src/index.html",
+  "fallback": "src/fallback.html",
+  "src": "src",
+  "assets": "assets",
+  "favicon": "assets/favicon/favicon.ico",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build & npm run server",
+    "build": "NODE_ENV=production webpack --config webpack.prod.js",
+    "server": "node server/server.js",
+    "start:dev": "npm run build:dev & npm run server:dev",
+    "build:dev": "webpack -- --watch --config webpack.dev.js",
+    "server:dev": "nodemon server/server.js",
+    "start:dev2": "NODE_ENV=development nodemon server/server.js",
+    "start:dev3": "webpack serve --config webpack.dev.js --open"
   },
   "author": "pdl39",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "nodemon": "^2.0.12",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-middleware": "^5.0.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  }
 }
