@@ -2,15 +2,18 @@ const path = require('path');
 const express = require('express');
 const logger = require('morgan')('dev');
 const app = express();
+const appDir = require('fs').realpathSync(process.cwd());
 
 
+console.log('Application Root Directory: ', appDir);
 // WEBPACK-DEV-MIDDLEWARE (for development)
 if (process.env.NODE_ENV === 'development') {
+  // This will will only run with 'npm run start:dev2'
   console.log('WEBPACK-DEV-MIDDLEWARE RUNNING...');
 
   const webpack = require('webpack');
   const webpackDevMiddleware = require('webpack-dev-middleware');
-  const webpackDevConfig = require('../webpack.dev');
+  const webpackDevConfig = require(path.resolve(appDir, 'webpack.dev'));
   const compiler = webpack(webpackDevConfig);
 
   app.use(webpackDevMiddleware(compiler));
@@ -28,7 +31,7 @@ app.use('/api', require('./routes/api'));
 
 app.get('/', (req, res, next) => {
   try {
-    res.sendFile(path.join(__dirname, '..', 'dist/index.html'));
+    res.sendFile(path.join(appDir, 'dist/index.html'));
   }
   catch (err) {
     next(err);
@@ -36,14 +39,14 @@ app.get('/', (req, res, next) => {
 });
 
 // STATIC-FILE SERVE
-app.use(express.static(path.resolve(__dirname, '..', 'assets')));
-app.use(express.static(path.resolve(__dirname, '..', 'src')));
-app.use(express.static(path.resolve(__dirname, '..', 'dist')));
+app.use(express.static(path.resolve(appDir, 'assets')));
+app.use(express.static(path.resolve(appDir, 'src')));
+app.use(express.static(path.resolve(appDir, 'dist')));
 
 // FALLBACK HANDLER
 app.get('*', (req, res, next) => {
   try {
-    res.sendFile(path.resolve(__dirname, '..', 'src/fallback.html'));
+    res.sendFile(path.resolve(appDir, 'src/fallback.html'));
   }
   catch (err) {
     next(err);

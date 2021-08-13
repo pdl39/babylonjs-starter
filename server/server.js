@@ -1,6 +1,6 @@
 const app = require('./app.js');
 const HOST = process.env.HOST ?? '127.0.0.1';
-const PORT = process.env.PORT ?? 8081;
+const PORT = process.env.PORT ?? 8083;
 
 const startServer = async () => {
   try {
