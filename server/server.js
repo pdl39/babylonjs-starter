@@ -1,10 +1,6 @@
 const app = require('./app.js');
 const HOST = process.env.HOST ?? '127.0.0.1';
 const PORT = process.env.PORT ?? 8085;
-module.exports = {
-  expressServerHOST: HOST,
-  expressServerPORT: PORT
-}
 
 const startServer = async () => {
   // START EXPRESS SERVER
