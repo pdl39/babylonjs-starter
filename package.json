@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-express-app-bp",
+  "name": "nodejs-express-app-boilerplate",
   "version": "1.0.0",
   "description": "A minimal webpack build for Node.js Express Web App",
   "main": "src/index.js",
@@ -9,23 +9,25 @@
   "assets": "assets",
   "favicon": "assets/favicon/favicon.ico",
   "scripts": {
-    "start": "npm run build & npm run server",
     "build": "NODE_ENV=production webpack --config webpack.prod.js",
     "server": "node server/server.js",
+    "start": "npm run server:webpack & npm run server:dev",
     "start:dev": "npm run build:dev & npm run server:dev",
     "build:dev": "webpack --watch --config webpack.dev.js",
+    "server:webpack": "webpack serve --config webpack.dev.js",
     "server:dev": "nodemon server/server.js",
-    "start:dev2": "NODE_ENV=development nodemon server/server.js",
-    "start:dev3": "webpack serve --config webpack.dev.js"
+    "server:dev2": "NODE_ENV=development nodemon server/server.js"
   },
   "author": "pdl39",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.15.3",
     "express": "^4.17.1",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",

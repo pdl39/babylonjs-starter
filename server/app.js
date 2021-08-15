@@ -4,8 +4,8 @@ const logger = require('morgan')('dev');
 const app = express();
 const appDir = require('fs').realpathSync(process.cwd());
 
+console.log('Project root directory: ', appDir);
 
-console.log('Application Root Directory: ', appDir);
 // WEBPACK-DEV-MIDDLEWARE (for development)
 if (process.env.NODE_ENV === 'development') {
   // This will will only run with 'npm run start:dev2'
@@ -24,10 +24,10 @@ app.use(logger); // logging
 app.use(express.json()); // body-parsing
 
 // ROUTES
-/*  Add your routes here and uncomment.
-app.use('/api', require('./routes/api'));
-...
-*/
+// Add your routes here and uncomment. For example:
+app.use('/api', require('./router/api'));
+// ...
+// */
 
 app.get('/', (req, res, next) => {
   try {

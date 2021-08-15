@@ -13,6 +13,7 @@ const renderApp = (app) => {
   main.innerHTML = `
     <strong>${appName}</strong>
   `
+  main.style.color = '#3a7b5c';
 
   return main;
 }
