@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs');
 const path = require('path');
 const appDir = fs.realpathSync(process.cwd());
-const pk = require('./package.json');
+const pk = require(path.resolve(appDir, 'package.json'));
 
 module.exports = {
   entry: {
