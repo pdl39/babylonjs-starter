@@ -12,7 +12,7 @@
     "build": "NODE_ENV=production webpack --config webpack.prod.js",
     "server": "node server/server.js",
     "start": "npm run server:webpack & npm run server:dev",
-    "start:dev": "npm run build:dev & npm run dev-server",
+    "start:dev": "npm run build:dev & npm run server:dev",
     "build:dev": "webpack --watch --config webpack.dev.js",
     "server:webpack": "webpack serve --config webpack.dev.js",
     "server:dev": "nodemon server/server.js",
