@@ -69,7 +69,7 @@ If you decide to change certain property names and values in `package.json` (e.g
 
 ## Requirements:
 
-(as of 2021.08.17)
+(as of 2021.08.18)
 
 - _LTS versions of node & npm_
   - node v.14.17.5
@@ -81,7 +81,7 @@ If you decide to change certain property names and values in `package.json` (e.g
 
 ## Current Known Issues
 
-(as of 2021.08.17):
+(as of 2021.08.18):
 
 - _Install fails on node v.15.4.0_
   - Other variations of v15 have not been tested
