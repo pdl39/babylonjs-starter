@@ -17,7 +17,7 @@ const repo = packagejson.repository.url;
 
 // Files to skip when calling copyFiles function (all in lower case).
 const dirsToSkip = ['.git', '.cache', 'node_modules', 'dist', 'bin', 'temp'];
-const filesToSkip = ['changelog.md', 'license.md', 'readme.md', 'package.json', 'package-lock.json', '.gitignore'];
+const filesToSkip = ['changelog.md', 'license', 'license.md', 'readme.md', 'package.json', 'package-lock.json', '.gitignore'];
 const extToSkipAlways = ['.ds_store'];
 const extToSkipConditional = ['.js', '.js.map', '.d.ts'];
 const extSkipExceptionDirs = ['src', 'server']; // Directories in this list are exceptions for skipping certain extensions.
@@ -112,9 +112,9 @@ async function setupProject() {
 
     logMessage(`Installation Success.\n`, 'green');
     logMessage(`Please refer to README.md at ${repo} on how to get started.\n`, 'green');
-    logMessage(`${packagejson.name} by ${packagejson.author}`, 'gray');
-    logMessage(`Published at npm (https://www.npmjs.com/package/babylonjs-game-starter)`, 'gray');
-    logMessage(`MIT Licence`, 'gray');
+    logMessage(`${packagejson.name} v${packagejson.version}`, 'gray');
+    logMessage(`Published at npm (https://www.npmjs.com/package/${packagejson.name})`, 'gray');
+    logMessage(`${packagejson.license} Licence`, 'gray');
     logMessage(`Copyright (c) ${new Date().getFullYear()} Peter Donghun Lee\n`, 'gray');
     logMessage(`Happy Coding :)`, 'brightGreen');
   }
