@@ -1,6 +1,6 @@
 {
   "name": "nodejs-express-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A minimal webpack build for Node.js Express Web App",
   "author": "pdl39",
   "license": "MIT",
