@@ -85,30 +85,6 @@ If you decide to change certain property names and values in `package.json` (e.g
 
 - _Install fails on node v.15.4.0_
   - Other variations of v15 have not been tested
-- _`.gitgnore` copy fails with Error: ENOENT and generates an empty file_
-
-  - As a temporary fix, please paste the following into the generated empty `.gitignore` file:
-
-  ```
-  .DS_Store
-  .cache
-  *.Cache
-
-  node_modules
-  *bundle.js*
-
-  # Private files including .env files
-  .env
-
-  # Ignore all build generated files in the root dist directory except for index.html
-  /dist/*
-  !/dist/index.html
-
-  /assets/*
-  !/assets/favicon/
-  /assets/favicon/*
-  !/assets/favicon/favicon.ico
-  ```
 
 <br/>
 
