@@ -104,11 +104,6 @@ If you decide to change certain property names and values in `package.json` (e.g
   /dist/*
   !/dist/index.html
 
-  # .js | .js.map | .d.ts files (for Typescript Project)
-  src/**/*.js*
-  game/**/*.js*
-  game/**/*.d.ts
-
   /assets/*
   !/assets/favicon/
   /assets/favicon/*
