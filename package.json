@@ -10,10 +10,14 @@
   },
   "main": "src/index.js",
   "keywords": [
+    "node",
     "nodejs",
+    "node.js",
     "expressjs",
+    "express.js",
     "javascript",
     "webpack",
+    "buil",
     "boilerplate",
     "starter"
   ],
