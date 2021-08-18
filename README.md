@@ -1,6 +1,6 @@
 # Node.js Express App
 
-## _A basic starting point for your node express.js projects, built with Webpack._
+## _A basic starting point for your Node.js Express projects, built with Webpack._
 
 - The build is based on vanilla JS with no specific frontend framework in mind,
 - but you can definitely add the frontend framework of your choice and update configurations accordingly.
@@ -120,7 +120,7 @@ If you decide to change certain property names and values in `package.json` (e.g
 ## Issues
 
 If you find any new bugs/errors, please file issues at:
-https://github.com/pdl39/babylonjs-game-starter/issues
+https://github.com/pdl39/nodejs-express-app/issues
 
 <br/>
 
