@@ -5,7 +5,8 @@ const DB = require('sequelize');
 const appDir = require('fs').realpathSync(process.cwd());
 const pk = require(path.resolve(appDir, 'package.json'));
 
-const databaseName = pk.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
+const dbName = pk.name + (process.env.NODE_ENV === 'test' ? '-test' : '');
+const dbUrl = process.env.DATABASE_URL || `postgres://localhost:5432/${dbName}`;
 
 const config = {
   logging: false
@@ -23,10 +24,7 @@ if(process.env.DATABASE_URL){
   };
 }
 
-const db = new DB(
-  process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`,
-  config
-);
+const db = new DB(dbUrl, config);
 
 module.exports = db
 
